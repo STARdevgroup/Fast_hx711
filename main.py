@@ -24,6 +24,7 @@ seuil = 0.2
 tare_time = 10000
 before_time_tare = time.ticks_ms()
 tare_value = []
+
 while time.ticks_diff(time.ticks_ms(), before_time_tare) < tare_time:
     raw = hx711.read()          # lecture brute (24 bits signés)
     weight = raw * scale_factor # conversion en grammes
