@@ -25,9 +25,11 @@ Ce projet développe un banc d'acquisition de données pour tracer les courbes d
 7. Téléchargez le firmware MicroPython UF2 pour Pico depuis :
    [https://micropython.org/download/RPI_PICO_W/](https://micropython.org/download/RPI_PICO_W/)
 8. Glissez déposez le fichier UF2 sur le disque `RPI-RP2`. Le Pico redémarrera automatiquement.
-9. Pour déployer le code, sélectionnez dans VSCode les fichiers `main.py` et `hx711_gpio.py`, faites un clic droit et choisissez :
+9. Pour déployer le code, sélectionnez dans VSCode les fichiers `main.py`, `data.py`, `get_log.json`et `hx711_gpio.py`, faites un clic droit et choisissez :
    ```
    Upload Project to Pico
    ```
+
+10. Pour afficher la mémoire de votre Raspberry cliquez sur le bouton **Toggle Mpy FS**
 
 Votre environnement est prêt à fonctionner avec le banc d’essai et la librairie Fast_hx711 pour la gestion du capteur HX711.  
