@@ -31,6 +31,6 @@ tare_value = sum(tare_value) / len(tare_value)
     
 while True:
     raw = hx711.read()          # lecture brute (24 bits signés)
-    weight = raw * scale_factor - tare_value# conversion en grammes
+    weight = (raw * scale_factor - tare_value)*-1# conversion en grammes
     print(f"{weight:6.1f} g", end="\r")
     log_usb(weight,path = file_name)
