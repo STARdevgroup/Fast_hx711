@@ -20,7 +20,7 @@ hx711 = HX711(Pin(CLOCK_PIN, Pin.OUT), Pin(DATA_PIN, Pin.IN, pull=Pin.PULL_DOWN)
 hx711.tare()
 
 # Facteur d'échelle (à calibrer avec une masse connue)
-scale_factor = 1/725 * 9.81 
+scale_factor = 0.270/57450
 seuil = 0.2
 
 tare_time = 10000
