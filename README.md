@@ -1,45 +1,33 @@
-```markdown
-# Projet Banc d’essai – IPSA Rocket
+# Projet Banc d'essai - IPSA Rocket
 
-Ce projet réalise un banc d’acquisition de données pour tracer les courbes de poussée de moteurs de rocketry amateur.  
-Objectifs : analyser la fiabilité des moteurs et présenter nos travaux aux futurs étudiants de l’IPSA.
+Ce projet développe un banc d'acquisition de données pour tracer les courbes de poussée de moteurs de rocketry amateur. Objectifs : analyser la fiabilité des moteurs et présenter nos travaux aux futurs étudiants d'IPSA.
 
 ## Environnement de développement
 
 - IDE recommandé : **Visual Studio Code (VSCode)**
 - Extension VSCode : **MicroPico**
-- Carte cible : **Raspberry Pi Pico W**
 - Capteur : **HX711** (librairie `hx711_gpio.py` incluse dans le projet, licence MIT d’origine conservée)
 
 ## Installation et configuration
 
-1. Clonez le projet :
+1. Créez un répertoire pour le projet.
+2. Clonez la librairie Fast_hx711 utilisée pour la lecture du capteur de force HX711 :
    ```
    git clone https://github.com/STARdevgroup/Fast_hx711.git
-   cd Fast_hx711
    ```
-
-2. Ouvrez le dossier dans **VSCode**.
-
-3. Installez l’extension **MicroPico** puis ouvrez la palette de commandes (`Ctrl+Shift+P`) et lancez :
+3. Accédez au dossier `Fast_hx711` dans le répertoire créé.
+4. Installez l'extension **MicroPico** dans VSCode.
+5. Ouvrez la palette de commandes (Ctrl+Shift+P ou barre de recherche) et lancez :
    ```
    MicroPico: Initialize MicroPico Project
    ```
+6. Préparez le Raspberry Pi Pico pour le flashage : maintenez le bouton **BOOTSEL** enfoncé et branchez-le à l’ordinateur. Le Pico doit apparaître comme un disque externe nommé `RPI-RP2`.
+7. Téléchargez le firmware MicroPython UF2 pour Pico depuis :
+   [https://micropython.org/download/RPI_PICO_W/](https://micropython.org/download/RPI_PICO_W/)
+8. Glissez déposez le fichier UF2 sur le disque `RPI-RP2`. Le Pico redémarrera automatiquement.
+9. Pour déployer le code, sélectionnez dans VSCode les fichiers `main.py` et `hx711_gpio.py`, faites un clic droit et choisissez :
+   ```
+   Upload Project to Pico
+   ```
 
-## Flashage du Raspberry Pi Pico W
-
-1. Maintenez le bouton **BOOTSEL** du Pico enfoncé et branchez-le en USB.
-2. Le Pico doit apparaître comme un disque externe nommé **RPI-RP2**.
-3. Téléchargez le firmware MicroPython UF2 pour Pico W :  
-   https://micropython.org/download/RPI_PICO_W/
-4. Glissez–déposez le fichier `.uf2` sur le disque **RPI-RP2**.  
-   Le Pico redémarre automatiquement avec MicroPython.
-
-## Déploiement du code
-
-1. Dans VSCode, sélectionnez `main.py` et `hx711_gpio.py`.
-2. Clic droit → **Upload Project to Pico** (commande MicroPico).
-3. Le code est maintenant sur la carte et prêt à être exécuté.
-
-L’environnement est désormais opérationnel pour utiliser le banc d’essai et enregistrer les courbes de poussée avec le capteur HX711.
-``` 
+Votre environnement est prêt à fonctionner avec le banc d’essai et la librairie Fast_hx711 pour la gestion du capteur HX711.  
