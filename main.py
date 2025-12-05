@@ -1,14 +1,11 @@
 from machine import Pin
 from hx711_gpio import HX711
 # main.py
-import time
-import os
+import time 
+from data import log_usb,get_log
 
-def log_usb(data):
-    with open('log.csv', 'a') as f:
-        f.write(f"{time.ticks_ms()},{data}\n")
-    f.close()
-
+log = get_log()
+file_name = f"data_log_{log}.csv"
 
 # Broches du Pico
 DATA_PIN = 19   # DOUT du HX711
@@ -36,4 +33,4 @@ while True:
     raw = hx711.read()          # lecture brute (24 bits signés)
     weight = raw * scale_factor - tare_value# conversion en grammes
     print(f"{weight:6.1f} g", end="\r")
-    log_usb(weight)
+    log_usb(weight,path = file_name)
