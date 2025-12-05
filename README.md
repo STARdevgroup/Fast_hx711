@@ -6,7 +6,7 @@ Ce projet développe un banc d'acquisition de données pour tracer les courbes d
 
 - IDE recommandé : **Visual Studio Code (VSCode)**
 - Extension VSCode : **MicroPico**
-- Capteur : **HX711** (librairie `hx711_gpio.py` incluse dans le projet, licence MIT d’origine conservée)
+- Capteur : **HX711** https://github.com/robert-hh/hx711.git (librairie `hx711_gpio.py` incluse dans le projet, licence MIT d’origine conservée)
 
 ## Installation et configuration
 
