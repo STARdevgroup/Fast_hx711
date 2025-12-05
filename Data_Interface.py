@@ -25,6 +25,7 @@ def plot_data(file_name):
     plt.legend()
     plt.grid(True)
     plt.show()
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Plot force sensor data from CSV file.')
     parser.add_argument('file_name', type=str, help='Path to the CSV file containing the data.')
